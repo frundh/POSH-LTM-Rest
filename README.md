@@ -7,7 +7,10 @@ It is built to work with the following BIG-IP versions:
 
 It requires PowerShell v3 or higher.
 
-It includes a Validation.cs class file (based on code posted by Brian Scholer on www.briantist.com) to allow for using the REST API with LTM devices using self-signed SSL certificates.
+It includes a Validation.cs class file (based on code posted by Brian Scholer on www.briantist.com) to allow for using the REST API with LTM devices using self-signed SSL certificates. PowerShell versions prior to 6.0 does not enable TLS 1.2 and 1.1 by default. To enable it for a session run:
+```powershell
+[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls, ssl3";
+```
 
 Setup:
 Install the latest version of the module either by calling 'Install-Module F5-LTM' to retrieve it from the PowerShell Gallery (assuming you're using PSGet, included in PowerShell 5 and later). By default, PSGallery is an untrusted repository, so you may be prompted for confirmation. If you don't have PowerShell 5 / PSGet, use the Gist install script available at https://gist.github.com/joel74/f5acb78ca7dbe0d87bc95cab98de1388
@@ -33,6 +36,7 @@ The module contains the following functions.
    * Get-iRule
    * Get-iRuleCollection (deprecated; use __Get-iRule__)
    * Get-Node
+   * Get-NodeStats
    * Get-Pool
    * Get-PoolList (deprecated; use __Get-Pool__)
    * Get-PoolMember
@@ -88,7 +92,7 @@ use the New-F5Session function to create this object. This function expects the 
    * A credential object for a user with rights to use the REST API.
 
 You can create a credential object using 'Get-Credential' and entering the username and password at the prompts, or programmatically like this:
-```
+```powershell
 $secpasswd = ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force
 $mycreds = New-Object System.Management.Automation.PSCredential "username", $secpasswd
 ```
@@ -102,7 +106,7 @@ To overwrite the F5 session in the script scope, use the -Default switch when ca
 There is a function called Test-Functionality that takes a pool name, a virtual server name, an IP address for the virtual server, and a computer as a pool member, and validates nearly all the functions in the module. Make sure that you don't use an existing pool name or virtual server name.
 Here is an example of how to use this function:
 
-```
+```powershell
 #Create an F5 session
 New-F5Session -LTMName $MyLTM_IP -LTMCredentials $MyLTMCreds
 Test-Functionality -TestVirtualServer 'TestVirtServer01' -TestVirtualServerIP $VirtualServerIP -TestPool 'TestPool01' -PoolMember $SomeComputerName

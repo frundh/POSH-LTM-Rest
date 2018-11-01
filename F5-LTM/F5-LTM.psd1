@@ -66,16 +66,70 @@ PowerShellVersion = '3.0'
 # NestedModules = @()
 
 # Functions to export from this module
-FunctionsToExport = '*'
+FunctionsToExport = @(
+    'Add-iRuleToVirtualServer'
+    'Add-PoolMember'
+    'Add-PoolMonitor'
+    'Disable-Node'
+    'Disable-PoolMember'
+    'Disable-VirtualServer'
+    'Enable-Node'
+    'Enable-PoolMember'
+    'Enable-VirtualServer'
+    'Get-BIGIPPartition'
+    'Get-F5Status'
+    'Get-HealthMonitor'
+    'Get-HealthMonitorType'
+    'Get-iRule'
+    'Get-Node'
+    'Get-NodeStats'
+    'Get-Pool'
+    'Get-PoolMember'
+    'Get-PoolMemberStats'
+    'Get-PoolMonitor'
+    'Get-PoolsForMember'
+    'Get-ProfileHttp'
+    'Get-StatusShape'
+    'Get-VirtualServer'
+    'Invoke-RestMethodOverride'
+    'New-F5Session'
+    'New-HealthMonitor'
+    'New-Node'
+    'New-Pool'
+    'New-ProfileHttp'
+    'New-VirtualServer'
+    'Remove-HealthMonitor'
+    'Remove-iRule'
+    'Remove-iRuleFromVirtualServer'
+    'Remove-Node'
+    'Remove-Pool'
+    'Remove-PoolMember'
+    'Remove-PoolMonitor'
+    'Remove-ProfileHttp'
+    'Remove-ProfileRamCache'
+    'Remove-VirtualServer'
+    'Set-iRule'
+    'Set-Pool'
+    'Set-PoolMemberDescription'
+    'Set-VirtualServer'
+    'Sync-DeviceToGroup'
+    'Test-F5Session'
+    'Test-Functionality'
+    'Test-HealthMonitor'
+    'Test-Node'
+    'Test-Pool'
+    'Test-ProfileHttp'
+    'Test-VirtualServer'    
+)
 
 # Cmdlets to export from this module
-CmdletsToExport = ''
+CmdletsToExport = @()
 
 # Variables to export from this module
 VariablesToExport = '*'
 
 # Aliases to export from this module
-AliasesToExport = ''
+AliasesToExport = @()
 
 # List of all modules packaged with this module
 # ModuleList = @()

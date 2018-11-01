@@ -1,0 +1,66 @@
+{
+    "kind": "tm:ltm:node:nodestats",
+    "generation": 1,
+    "selfLink": "https://localhost/mgmt/tm/ltm/node/~Common~DC-NODE-01/stats?ver=12.N.N.N",
+    "entries": {
+        "https://localhost/mgmt/tm/ltm/node/~Common~DC-NODE-01/~Common~DC-NODE-01/stats": {
+            "nestedStats": {
+                "kind": "tm:ltm:node:nodestats",
+                "selfLink": "https://localhost/mgmt/tm/ltm/node/~Common~DC-NODE-01/~Common~DC-NODE-01/stats?ver=12.N.N.N",
+                "entries": {
+                    "addr": {
+                        "description": "N.N.N.N"
+                    },
+                    "curSessions": {
+                        "value": 0
+                    },
+                    "monitorRule": {
+                        "description": "/Common/icmp (default node monitor)"
+                    },
+                    "monitorStatus": {
+                        "description": "up"
+                    },
+                    "tmName": {
+                        "description": "/Common/DC-NODE-01"
+                    },
+                    "serverside.bitsIn": {
+                        "value": 994633960
+                    },
+                    "serverside.bitsOut": {
+                        "value": 655195264
+                    },
+                    "serverside.curConns": {
+                        "value": 21
+                    },
+                    "serverside.maxConns": {
+                        "value": 49
+                    },
+                    "serverside.pktsIn": {
+                        "value": 1096629
+                    },
+                    "serverside.pktsOut": {
+                        "value": 549364
+                    },
+                    "serverside.totConns": {
+                        "value": 136943
+                    },
+                    "sessionStatus": {
+                        "description": "enabled"
+                    },
+                    "status.availabilityState": {
+                        "description": "available"
+                    },
+                    "status.enabledState": {
+                        "description": "enabled"
+                    },
+                    "status.statusReason": {
+                        "description": "Node address is available"
+                    },
+                    "totRequests": {
+                        "value": 0
+                    }
+                }
+            }
+        }
+    }
+}
